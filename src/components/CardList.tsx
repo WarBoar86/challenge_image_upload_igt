@@ -1,4 +1,4 @@
-import { AlertDialog, Box, GridItem, SimpleGrid, useDisclosure } from '@chakra-ui/react';
+import { SimpleGrid, useDisclosure } from '@chakra-ui/react';
 import { useState } from 'react';
 import { Card } from './Card';
 import { ModalViewImage } from './Modal/ViewImage';
@@ -46,15 +46,12 @@ export function CardList({ cards }: CardsProps): JSX.Element {
 
           {cards.length > 0 &&
               cards.map( c => 
-                <GridItem 
-                  onClick={() => handleViewImage(c.url)}
-                  key={c.id}
-                >
+                
                   <Card
+                    key={c.id}
                     data= {c}
-                    viewImage= {() => c.url}
+                    viewImage= {() => handleViewImage(c.url)}
                   />
-                </GridItem>
               )
           }
 

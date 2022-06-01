@@ -46,11 +46,10 @@ export function ModalViewImage({
           >
             <Link 
               href={imgUrl}
-              passHref
               target="_blank"
               outline="none"
             >
-              <a>Abrir original</a>
+              Abrir original
             </Link>
           </ModalFooter>
         </ModalContent>
